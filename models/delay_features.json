@@ -1,0 +1,18 @@
+{
+  "numeric": [
+    "distance_km",
+    "driver_score",
+    "load_tonnes",
+    "vehicle_age_years",
+    "month",
+    "is_monsoon"
+  ],
+  "categorical": [
+    "origin",
+    "destination",
+    "vehicle_class",
+    "day_of_week"
+  ],
+  "target": "is_delayed",
+  "note": "Predicts probability of a non-On_Time delivery."
+}

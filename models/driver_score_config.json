@@ -1,0 +1,20 @@
+{
+  "weights": {
+    "on_time": 0.4,
+    "fuel": 0.25,
+    "incident": 0.2,
+    "consistency": 0.15
+  },
+  "methodology_version": "1.0",
+  "score_range": [
+    60,
+    100
+  ],
+  "grade_bands": {
+    "A": ">=85",
+    "B": "75\u201384.9",
+    "C": "65\u201374.9",
+    "D": "<65"
+  },
+  "note": "Descriptive coaching score; not an automated employment decision."
+}

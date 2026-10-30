@@ -9,7 +9,7 @@ and require no external API key.
 
 from __future__ import annotations
 
-from itertools import permutations
+from itertools import pairwise, permutations
 
 from fleet import config
 
@@ -32,7 +32,7 @@ def _route_distance(origin: str, order: list[str], return_to_origin: bool) -> fl
     route = [origin, *order]
     if return_to_origin:
         route.append(origin)
-    return sum(_distance(a, b) for a, b in zip(route, route[1:]))
+    return sum(_distance(a, b) for a, b in pairwise(route))
 
 
 def _nearest_neighbour(origin: str, stops: list[str]) -> list[str]:
@@ -94,7 +94,7 @@ def optimize_route(origin: str, stops: list[str], return_to_origin: bool = True)
     route = [origin, *optimized_order] + ([origin] if return_to_origin else [])
     legs = [
         {"from": a, "to": b, "distance_km": round(_distance(a, b), 1)}
-        for a, b in zip(route, route[1:])
+        for a, b in pairwise(route)
     ]
     savings = baseline_distance - optimized_distance
     savings_pct = (savings / baseline_distance * 100) if baseline_distance else 0.0

@@ -1,0 +1,370 @@
+{
+  "generated_at": "2026-10-30 18:07:30 UTC",
+  "dataset": {
+    "rows": 5000,
+    "vehicles": 100,
+    "drivers": 50,
+    "date_range": [
+      "2025-01-01",
+      "2025-12-31"
+    ],
+    "on_time_rate": 0.88,
+    "anomaly_rate": 0.03
+  },
+  "delay": {
+    "target": "is_delayed",
+    "split": "time-based 80/20 (chronological)",
+    "train_rows": 4000,
+    "test_rows": 1000,
+    "models": {
+      "logistic_regression": {
+        "accuracy": 0.919,
+        "precision": 0.4783,
+        "recall": 0.7237,
+        "f1": 0.5759,
+        "roc_auc": 0.9527,
+        "confusion_matrix": [
+          [
+            864,
+            60
+          ],
+          [
+            21,
+            55
+          ]
+        ],
+        "positive_rate": 0.115
+      },
+      "hist_gradient_boosting": {
+        "accuracy": 0.947,
+        "precision": 0.7091,
+        "recall": 0.5132,
+        "f1": 0.5954,
+        "roc_auc": 0.9541,
+        "confusion_matrix": [
+          [
+            908,
+            16
+          ],
+          [
+            37,
+            39
+          ]
+        ],
+        "positive_rate": 0.055
+      },
+      "calibrated_hist_gradient_boosting": {
+        "accuracy": 0.923,
+        "precision": 0.4957,
+        "recall": 0.75,
+        "f1": 0.5969,
+        "roc_auc": 0.9515,
+        "confusion_matrix": [
+          [
+            866,
+            58
+          ],
+          [
+            19,
+            57
+          ]
+        ],
+        "positive_rate": 0.115
+      },
+      "dummy_prior": {
+        "accuracy": 0.924,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": 0.5,
+        "confusion_matrix": [
+          [
+            924,
+            0
+          ],
+          [
+            76,
+            0
+          ]
+        ],
+        "positive_rate": 0.0
+      }
+    },
+    "best_model": "calibrated_hist_gradient_boosting",
+    "top_logistic_features": [
+      {
+        "feature": "num__driver_score",
+        "coefficient": -3.0518
+      },
+      {
+        "feature": "num__distance_km",
+        "coefficient": 2.2085
+      },
+      {
+        "feature": "num__is_monsoon",
+        "coefficient": 1.5045
+      },
+      {
+        "feature": "cat__destination_Hyderabad",
+        "coefficient": 0.4895
+      },
+      {
+        "feature": "cat__day_of_week_Saturday",
+        "coefficient": 0.4562
+      },
+      {
+        "feature": "cat__origin_Mumbai",
+        "coefficient": -0.4294
+      },
+      {
+        "feature": "cat__origin_Hyderabad",
+        "coefficient": 0.4283
+      },
+      {
+        "feature": "cat__origin_Delhi",
+        "coefficient": -0.3769
+      },
+      {
+        "feature": "cat__day_of_week_Tuesday",
+        "coefficient": -0.363
+      },
+      {
+        "feature": "cat__origin_Pune",
+        "coefficient": 0.2788
+      }
+    ],
+    "top_permutation_features": [
+      {
+        "feature": "driver_score",
+        "importance": 0.3198
+      },
+      {
+        "feature": "distance_km",
+        "importance": 0.089
+      },
+      {
+        "feature": "vehicle_age_years",
+        "importance": 0.0011
+      },
+      {
+        "feature": "destination",
+        "importance": 0.0009
+      },
+      {
+        "feature": "month",
+        "importance": 0.0
+      },
+      {
+        "feature": "is_monsoon",
+        "importance": 0.0
+      },
+      {
+        "feature": "load_tonnes",
+        "importance": -0.0011
+      },
+      {
+        "feature": "vehicle_class",
+        "importance": -0.0011
+      },
+      {
+        "feature": "day_of_week",
+        "importance": -0.0035
+      },
+      {
+        "feature": "origin",
+        "importance": -0.0056
+      }
+    ]
+  },
+  "fuel_anomaly": {
+    "primary_method": "robust_zscore",
+    "isolation_forest": {
+      "precision": 0.3171,
+      "recall": 0.4643,
+      "f1": 0.3768,
+      "roc_auc": 0.8548,
+      "flagged_rate": 0.041,
+      "contamination": 0.03
+    },
+    "zscore_baseline": {
+      "precision": 0.9091,
+      "recall": 0.7143,
+      "f1": 0.8,
+      "flagged_rate": 0.022,
+      "threshold": "|robust z| > 3.5"
+    },
+    "features": [
+      "distance_km",
+      "fuel_L",
+      "kmpl",
+      "load_tonnes",
+      "driver_score"
+    ],
+    "class_baselines": {
+      "Heavy Truck": {
+        "median_kmpl": 3.5835,
+        "mad_kmpl": 0.175495,
+        "count": 1582
+      },
+      "Light Van": {
+        "median_kmpl": 8.8254,
+        "mad_kmpl": 0.463983,
+        "count": 571
+      },
+      "Medium Truck": {
+        "median_kmpl": 5.5012,
+        "mad_kmpl": 0.285401,
+        "count": 1362
+      },
+      "Refrigerated Truck": {
+        "median_kmpl": 4.1125,
+        "mad_kmpl": 0.197613,
+        "count": 363
+      }
+    }
+  },
+  "driver_score": {
+    "methodology_version": "1.0",
+    "weights": {
+      "on_time": 0.4,
+      "fuel": 0.25,
+      "incident": 0.2,
+      "consistency": 0.15
+    },
+    "drivers": 50,
+    "mean": 91.76,
+    "std": 2.81,
+    "min": 83.5,
+    "max": 95.9,
+    "grade_counts": {
+      "A": 48,
+      "B": 2
+    },
+    "fairness": {
+      "by_depot": [
+        {
+          "depot_city": "Bengaluru",
+          "count": 9,
+          "mean": 92.54,
+          "min": 89.4,
+          "max": 94.7
+        },
+        {
+          "depot_city": "Chennai",
+          "count": 8,
+          "mean": 91.64,
+          "min": 88.4,
+          "max": 94.6
+        },
+        {
+          "depot_city": "Delhi",
+          "count": 9,
+          "mean": 91.63,
+          "min": 83.5,
+          "max": 94.8
+        },
+        {
+          "depot_city": "Hyderabad",
+          "count": 8,
+          "mean": 90.24,
+          "min": 83.5,
+          "max": 95.9
+        },
+        {
+          "depot_city": "Mumbai",
+          "count": 8,
+          "mean": 92.1,
+          "min": 88.7,
+          "max": 94.4
+        },
+        {
+          "depot_city": "Pune",
+          "count": 8,
+          "mean": 92.34,
+          "min": 88.1,
+          "max": 94.7
+        }
+      ],
+      "by_experience": [
+        {
+          "experience_band": "1\u20135 yrs",
+          "count": 15,
+          "mean": 91.35,
+          "min": 83.5,
+          "max": 95.4
+        },
+        {
+          "experience_band": "6\u201310 yrs",
+          "count": 18,
+          "mean": 90.76,
+          "min": 83.5,
+          "max": 94.6
+        },
+        {
+          "experience_band": "11\u201315 yrs",
+          "count": 17,
+          "mean": 93.18,
+          "min": 90.4,
+          "max": 95.9
+        }
+      ],
+      "max_depot_mean_gap": 2.3,
+      "flag": false,
+      "note": "No protected attributes are used. Depot/experience are monitored for unintended disparities and reviewed before any action."
+    }
+  },
+  "route_optimizer": {
+    "samples": [
+      {
+        "origin": "Mumbai",
+        "stops": [
+          "Delhi",
+          "Pune",
+          "Chennai",
+          "Hyderabad"
+        ],
+        "baseline_km": 5390.0,
+        "optimized_km": 4960.0,
+        "savings_pct": 7.98
+      },
+      {
+        "origin": "Delhi",
+        "stops": [
+          "Mumbai",
+          "Bengaluru",
+          "Chennai",
+          "Hyderabad"
+        ],
+        "baseline_km": 4960.0,
+        "optimized_km": 4960.0,
+        "savings_pct": 0.0
+      },
+      {
+        "origin": "Bengaluru",
+        "stops": [
+          "Mumbai",
+          "Delhi",
+          "Pune",
+          "Chennai"
+        ],
+        "baseline_km": 5380.0,
+        "optimized_km": 4960.0,
+        "savings_pct": 7.81
+      },
+      {
+        "origin": "Chennai",
+        "stops": [
+          "Mumbai",
+          "Delhi",
+          "Pune",
+          "Hyderabad"
+        ],
+        "baseline_km": 5390.0,
+        "optimized_km": 4960.0,
+        "savings_pct": 7.98
+      }
+    ],
+    "average_savings_pct": 5.94,
+    "method": "exact permutations for <=7 stops; nearest-neighbour + 2-opt otherwise"
+  }
+}

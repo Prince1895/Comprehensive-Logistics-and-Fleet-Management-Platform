@@ -1,0 +1,32 @@
+{
+  "features": [
+    "distance_km",
+    "fuel_L",
+    "kmpl",
+    "load_tonnes",
+    "driver_score"
+  ],
+  "class_baselines": {
+    "Heavy Truck": {
+      "median_kmpl": 3.5835,
+      "mad_kmpl": 0.175495,
+      "count": 1582
+    },
+    "Light Van": {
+      "median_kmpl": 8.8254,
+      "mad_kmpl": 0.463983,
+      "count": 571
+    },
+    "Medium Truck": {
+      "median_kmpl": 5.5012,
+      "mad_kmpl": 0.285401,
+      "count": 1362
+    },
+    "Refrigerated Truck": {
+      "median_kmpl": 4.1125,
+      "mad_kmpl": 0.197613,
+      "count": 363
+    }
+  },
+  "contamination": 0.03
+}

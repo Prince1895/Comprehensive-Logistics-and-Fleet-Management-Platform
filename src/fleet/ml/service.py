@@ -67,8 +67,9 @@ def predict_delay(payload: dict[str, Any]) -> dict[str, Any]:
     frame = _delay_frame(payload)
 
     if model is not None:
-        probability = float(model.predict_proba(frame)[0, 1])
-        model_name = "HistGradientBoosting / LogisticRegression"
+        delay_probability = float(model.predict_proba(frame)[0, 1])
+        probability = 1 - delay_probability
+        model_name = "Calibrated HistGradientBoosting"
     else:
         # Transparent fallback used before training or if the model file is absent.
         risk = (
@@ -125,22 +126,35 @@ def predict_fuel_anomaly(payload: dict[str, Any]) -> dict[str, Any]:
     vehicle_class = payload.get("vehicle_class", "Medium Truck")
     baseline = baselines.get(vehicle_class, {})
     expected_kmpl = float(baseline.get("median_kmpl", 5.0))
+    mad_kmpl = float(baseline.get("mad_kmpl", 0.0))
     actual_kmpl = float(frame.loc[0, "kmpl"])
     deviation_pct = ((actual_kmpl - expected_kmpl) / expected_kmpl * 100) if expected_kmpl else 0.0
+    z_score = (0.6745 * (actual_kmpl - expected_kmpl) / mad_kmpl) if mad_kmpl else 0.0
+    z_flag = abs(z_score) > 3.5
 
     model = _load_joblib(FUEL_MODEL)
     if model is not None:
-        score = float(model.decision_function(frame)[0])
-        is_anomaly = bool(model.predict(frame)[0] == -1)
-        method = "IsolationForest"
+        iso_score = float(model.decision_function(frame)[0])
+        iso_flag = bool(model.predict(frame)[0] == -1)
     else:
-        is_anomaly = abs(deviation_pct) > 25
-        score = -abs(deviation_pct) / 100
-        method = "zscore_fallback"
+        iso_score = 0.0
+        iso_flag = False
+
+    # The robust z-score is the primary detector: it is explainable and
+    # performed best on the held-out evaluation. IsolationForest provides a
+    # multivariate second opinion for unusual combinations of features.
+    is_anomaly = bool(z_flag or iso_flag)
+    if z_flag:
+        method = "robust_zscore"
+    elif iso_flag:
+        method = "isolation_forest"
+    else:
+        method = "robust_zscore"
 
     return {
         "is_anomaly": is_anomaly,
-        "anomaly_score": round(score, 4),
+        "anomaly_score": round(-abs(z_score), 4) if z_flag else round(iso_score, 4),
+        "z_score": round(z_score, 4),
         "kmpl": round(actual_kmpl, 2),
         "expected_kmpl": round(expected_kmpl, 2),
         "deviation_pct": round(deviation_pct, 2),
