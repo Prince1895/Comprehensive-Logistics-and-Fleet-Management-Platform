@@ -1,0 +1,10 @@
+column_name,data_type,sample_value_1,sample_value_2,sample_value_3,nullable,description_fill_in
+trip_id,object/numeric,TRP00001,TRP00002,TRP00003,No,trip_id — [Learner to fill in description]
+vehicle_id,object/numeric,VH032,VH010,VH018,No,vehicle_id — [Learner to fill in description]
+driver_id,object/numeric,DRV002,DRV025,DRV050,No,driver_id — [Learner to fill in description]
+origin,object/numeric,Mumbai,Delhi,Bengaluru,No,origin — [Learner to fill in description]
+destination,object/numeric,Delhi,Pune,Delhi,No,destination — [Learner to fill in description]
+distance_km,object/numeric,64.6,776.1,1429.2,No,distance_km — [Learner to fill in description]
+fuel_L,object/numeric,77.4,17.0,121.4,No,fuel_L — [Learner to fill in description]
+delivery_status,object/numeric,On_Time,On_Time,On_Time,No,delivery_status — [Learner to fill in description]
+driver_score,object/numeric,94,61,88,No,driver_score — [Learner to fill in description]
