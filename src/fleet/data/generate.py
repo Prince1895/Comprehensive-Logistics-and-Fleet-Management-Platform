@@ -82,7 +82,7 @@ def build_drivers() -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for number in range(1, config.DRIVER_COUNT + 1):
         experience = 1 + ((number * 7) % 15)
-        base_score = 62 + ((number * 37) % 37) + min(experience * 0.25, 3)
+        base_score = 62 + ((number * 17) % 37) + min(experience * 0.25, 3)
         rows.append(
             {
                 "driver_id": f"DRV{number:03d}",
