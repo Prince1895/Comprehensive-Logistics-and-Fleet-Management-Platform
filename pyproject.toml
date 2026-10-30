@@ -21,7 +21,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["ruff>=0.4", "jupyter>=1.0", "nbconvert>=7.0"]
+dev = [
+    "ruff>=0.4",
+    "jupyter>=1.0",
+    "nbconvert>=7.0",
+    "matplotlib>=3.8",
+    "kaleido>=1.0",
+]
 
 [build-system]
 requires = ["setuptools>=68"]

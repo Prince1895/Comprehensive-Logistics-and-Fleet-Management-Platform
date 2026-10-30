@@ -12,7 +12,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import case, func, select
 from sqlalchemy.orm import Session
 
-from fleet import config
 from fleet.api.schemas import (
     AnomalyOut,
     DelayRequest,

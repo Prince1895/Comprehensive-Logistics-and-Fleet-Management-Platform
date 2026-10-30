@@ -157,12 +157,12 @@ def inject_measurement_anomalies(
     df["anomaly_detail"] = ""
 
     n = len(df)
-    n_anomalies = int(round(n * config.ANOMALY_SHARE))
-    n_duplicates = int(round(n_anomalies * 0.133))
+    n_anomalies = round(n * config.ANOMALY_SHARE)
+    n_duplicates = round(n_anomalies * 0.133)
     n_measurement = n_anomalies - n_duplicates
 
-    n_spike = int(round(n_measurement * 0.46))
-    n_drop = int(round(n_measurement * 0.31))
+    n_spike = round(n_measurement * 0.46)
+    n_drop = round(n_measurement * 0.31)
     n_distance = n_measurement - n_spike - n_drop
     fault_types = (
         ["fuel_spike"] * n_spike + ["fuel_drop"] * n_drop + ["distance_outlier"] * n_distance
@@ -211,8 +211,8 @@ def assign_delivery_status(df: pd.DataFrame, rng: np.random.Generator) -> pd.Dat
     )
 
     n = len(df)
-    n_on_time = int(round(n * config.ON_TIME_SHARE))
-    n_delayed = int(round(n * config.DELAYED_SHARE))
+    n_on_time = round(n * config.ON_TIME_SHARE)
+    n_delayed = round(n * config.DELAYED_SHARE)
     order = np.argsort(risk)
 
     status = np.empty(n, dtype=object)
@@ -228,7 +228,7 @@ def inject_duplicate_trips(
 ) -> tuple[pd.DataFrame, list[dict[str, str]]]:
     """Create exact feature duplicates while keeping trip_id/timestamp unique."""
     df = df.copy()
-    n_duplicates = int(round(len(df) * config.ANOMALY_SHARE * 0.133))
+    n_duplicates = round(len(df) * config.ANOMALY_SHARE * 0.133)
     candidates = np.flatnonzero(~df["is_anomaly"].to_numpy())
     if len(candidates) < 2 * n_duplicates:
         return df, labels
@@ -260,8 +260,8 @@ def rebalance_status(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     n = len(df)
     target = {
-        "On_Time": int(round(n * config.ON_TIME_SHARE)),
-        "Delayed": int(round(n * config.DELAYED_SHARE)),
+        "On_Time": round(n * config.ON_TIME_SHARE),
+        "Delayed": round(n * config.DELAYED_SHARE),
     }
     target["Failed"] = n - target["On_Time"] - target["Delayed"]
 
@@ -427,8 +427,10 @@ def _quality_report(
         "",
         "## Injected anomalies",
         "",
-        f"- Labelled anomalies: **{len(anomaly_labels):,}** "
-        f"({len(anomaly_labels) / len(dataset) * 100:.2f}% of rows)",
+        (
+            f"- Labelled anomalies: **{len(anomaly_labels):,}** "
+            f"({len(anomaly_labels) / len(dataset) * 100:.2f}% of rows)"
+        ),
         "",
         "| Anomaly type | Count |",
         "|---|---:|",

@@ -146,6 +146,7 @@ class FuelAnomalyRequest(BaseModel):
 class FuelAnomalyResponse(BaseModel):
     is_anomaly: bool
     anomaly_score: float
+    z_score: float | None = None
     kmpl: float
     expected_kmpl: float
     deviation_pct: float
