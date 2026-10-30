@@ -1,0 +1,29 @@
+column_name,data_type,sample_value_1,sample_value_2,sample_value_3,nullable,description_fill_in,file
+trip_id,string,TRP00001,TRP02500,TRP05000,No,Unique trip identifier. Sequential and immutable.,dataset.csv
+vehicle_id,string,VH001,VH050,VH100,No,Fleet vehicle identifier; joins to vehicles.csv.,dataset.csv
+driver_id,string,DRV001,DRV025,DRV050,No,Anonymised driver identifier; joins to drivers.csv.,dataset.csv
+origin,string,Mumbai,Delhi,Chennai,No,"Origin city. One of Mumbai, Delhi, Bengaluru, Pune, Chennai, Hyderabad.",dataset.csv
+destination,string,Pune,Hyderabad,Bengaluru,No,Destination city; always different from origin.,dataset.csv
+distance_km,float,148.3,776.1,1429.2,No,One-way route distance in kilometres.,dataset.csv
+fuel_L,float,38.4,77.4,121.4,No,"Fuel consumed in litres; modelled from distance, vehicle class, load and season.",dataset.csv
+delivery_status,string,On_Time,Delayed,Failed,No,"Delivery outcome. Calibrated to 88% On_Time, 9% Delayed, 3% Failed.",dataset.csv
+driver_score,integer,94,78,61,No,Transparent driver behaviour score from 60 to 100; see docs/ethics.,dataset.csv
+trip_start_time,datetime,2025-01-01 05:12:00,2025-07-14 18:40:00,2025-12-31 22:05:00,No,Trip start timestamp in YYYY-MM-DD HH:MM:SS format; chronological across 2025.,trip_metadata.csv
+vehicle_class,string,Heavy Truck,Medium Truck,Light Van,No,Vehicle category used for fuel-efficiency baselines.,trip_metadata.csv
+load_tonnes,float,2.4,9.8,21.5,No,Modelled payload in tonnes.,trip_metadata.csv
+month,integer,1,7,12,No,Calendar month extracted from trip_start_time.,trip_metadata.csv
+day_of_week,string,Monday,Friday,Sunday,No,Day name extracted from trip_start_time.,trip_metadata.csv
+route,string,Mumbai → Pune,Delhi → Chennai,Pune → Hyderabad,No,Human-readable origin → destination pair.,trip_metadata.csv
+data_source,string,original,synthetic,synthetic,No,Provenance flag: original 500 rows or generated rows.,trip_metadata.csv
+vehicle_id,string,VH001,VH050,VH100,No,Primary key for the vehicle dimension.,vehicles.csv
+vehicle_class,string,Heavy Truck,Light Van,Refrigerated Truck,No,Vehicle category.,vehicles.csv
+capacity_tonnes,float,25.0,12.0,3.5,No,Maximum payload capacity in tonnes.,vehicles.csv
+age_years,integer,0,6,12,No,Vehicle age in years; affects fuel efficiency.,vehicles.csv
+depot_city,string,Mumbai,Delhi,Chennai,No,Home depot city.,vehicles.csv
+driver_id,string,DRV001,DRV025,DRV050,No,Primary key for the driver dimension.,drivers.csv
+base_score,float,64.0,80.5,97.0,No,Long-run behaviour baseline used to generate trip scores.,drivers.csv
+experience_years,integer,1,8,15,No,Driving experience in years.,drivers.csv
+depot_city,string,Mumbai,Delhi,Chennai,No,Driver's home depot city.,drivers.csv
+trip_id,string,TRP00042,TRP02310,TRP04877,No,Trip with an injected fault; joins to dataset.csv.,anomaly_labels.csv
+anomaly_type,string,fuel_spike,distance_outlier,duplicate_trip,No,Ground-truth fault category.,anomaly_labels.csv
+detail,string,fuel_L multiplied by 2.10,duplicate of TRP01234,distance_km multiplied by 3.20,No,Human-readable explanation of the injected fault.,anomaly_labels.csv

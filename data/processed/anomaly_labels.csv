@@ -1,0 +1,151 @@
+trip_id,anomaly_type,detail
+TRP00076,fuel_spike,fuel_L multiplied by 1.83
+TRP00083,distance_outlier,distance_km multiplied by 3.63
+TRP00123,fuel_spike,fuel_L multiplied by 2.10
+TRP00128,fuel_drop,fuel_L multiplied by 0.41
+TRP00145,fuel_spike,fuel_L multiplied by 2.31
+TRP00160,fuel_drop,fuel_L multiplied by 0.35
+TRP00169,fuel_spike,fuel_L multiplied by 2.18
+TRP00266,fuel_spike,fuel_L multiplied by 2.01
+TRP00281,distance_outlier,distance_km multiplied by 2.82
+TRP00344,duplicate_trip,duplicate of TRP02734
+TRP00521,distance_outlier,distance_km multiplied by 3.26
+TRP00548,fuel_spike,fuel_L multiplied by 2.42
+TRP00566,fuel_spike,fuel_L multiplied by 2.23
+TRP00595,fuel_spike,fuel_L multiplied by 1.94
+TRP00603,duplicate_trip,duplicate of TRP00227
+TRP00623,fuel_drop,fuel_L multiplied by 0.48
+TRP00625,duplicate_trip,duplicate of TRP04927
+TRP00749,duplicate_trip,duplicate of TRP01354
+TRP00794,fuel_drop,fuel_L multiplied by 0.43
+TRP00845,fuel_drop,fuel_L multiplied by 0.38
+TRP00884,fuel_spike,fuel_L multiplied by 1.95
+TRP00896,distance_outlier,distance_km multiplied by 2.87
+TRP00902,duplicate_trip,duplicate of TRP02706
+TRP00947,duplicate_trip,duplicate of TRP01337
+TRP00989,fuel_spike,fuel_L multiplied by 1.95
+TRP00996,distance_outlier,distance_km multiplied by 2.95
+TRP01063,distance_outlier,distance_km multiplied by 2.77
+TRP01071,fuel_spike,fuel_L multiplied by 2.19
+TRP01119,duplicate_trip,duplicate of TRP00624
+TRP01132,fuel_drop,fuel_L multiplied by 0.37
+TRP01160,fuel_spike,fuel_L multiplied by 2.47
+TRP01166,fuel_spike,fuel_L multiplied by 1.85
+TRP01291,fuel_spike,fuel_L multiplied by 2.49
+TRP01311,fuel_drop,fuel_L multiplied by 0.54
+TRP01316,distance_outlier,distance_km multiplied by 2.59
+TRP01360,fuel_drop,fuel_L multiplied by 0.31
+TRP01420,fuel_drop,fuel_L multiplied by 0.43
+TRP01445,distance_outlier,distance_km multiplied by 3.39
+TRP01542,fuel_drop,fuel_L multiplied by 0.52
+TRP01624,fuel_spike,fuel_L multiplied by 1.85
+TRP01646,fuel_spike,fuel_L multiplied by 2.17
+TRP01681,fuel_spike,fuel_L multiplied by 2.35
+TRP01685,fuel_spike,fuel_L multiplied by 2.16
+TRP01747,duplicate_trip,duplicate of TRP03581
+TRP01774,distance_outlier,distance_km multiplied by 3.79
+TRP01787,fuel_spike,fuel_L multiplied by 2.45
+TRP01793,distance_outlier,distance_km multiplied by 2.63
+TRP01803,fuel_drop,fuel_L multiplied by 0.54
+TRP01812,fuel_drop,fuel_L multiplied by 0.31
+TRP01828,fuel_drop,fuel_L multiplied by 0.37
+TRP01849,fuel_drop,fuel_L multiplied by 0.31
+TRP01951,fuel_drop,fuel_L multiplied by 0.31
+TRP01990,fuel_drop,fuel_L multiplied by 0.50
+TRP01991,distance_outlier,distance_km multiplied by 3.23
+TRP01999,fuel_spike,fuel_L multiplied by 1.85
+TRP02107,distance_outlier,distance_km multiplied by 2.92
+TRP02125,fuel_drop,fuel_L multiplied by 0.40
+TRP02146,fuel_drop,fuel_L multiplied by 0.35
+TRP02175,fuel_spike,fuel_L multiplied by 1.81
+TRP02217,fuel_drop,fuel_L multiplied by 0.45
+TRP02255,duplicate_trip,duplicate of TRP00384
+TRP02316,distance_outlier,distance_km multiplied by 3.39
+TRP02375,distance_outlier,distance_km multiplied by 3.80
+TRP02378,fuel_drop,fuel_L multiplied by 0.47
+TRP02387,distance_outlier,distance_km multiplied by 2.82
+TRP02393,fuel_drop,fuel_L multiplied by 0.31
+TRP02412,duplicate_trip,duplicate of TRP01401
+TRP02470,distance_outlier,distance_km multiplied by 2.87
+TRP02527,fuel_spike,fuel_L multiplied by 2.13
+TRP02549,fuel_spike,fuel_L multiplied by 2.03
+TRP02557,duplicate_trip,duplicate of TRP01296
+TRP02586,fuel_spike,fuel_L multiplied by 2.06
+TRP02615,fuel_spike,fuel_L multiplied by 1.84
+TRP02644,duplicate_trip,duplicate of TRP04188
+TRP02651,fuel_spike,fuel_L multiplied by 2.00
+TRP02663,fuel_drop,fuel_L multiplied by 0.30
+TRP02779,fuel_drop,fuel_L multiplied by 0.40
+TRP02792,fuel_spike,fuel_L multiplied by 1.93
+TRP02809,fuel_spike,fuel_L multiplied by 1.96
+TRP02852,fuel_spike,fuel_L multiplied by 1.84
+TRP02859,distance_outlier,distance_km multiplied by 3.16
+TRP02870,distance_outlier,distance_km multiplied by 2.74
+TRP02899,fuel_drop,fuel_L multiplied by 0.37
+TRP02925,fuel_spike,fuel_L multiplied by 2.29
+TRP02949,fuel_spike,fuel_L multiplied by 1.93
+TRP03000,fuel_spike,fuel_L multiplied by 2.34
+TRP03006,fuel_drop,fuel_L multiplied by 0.34
+TRP03023,fuel_spike,fuel_L multiplied by 1.89
+TRP03099,fuel_drop,fuel_L multiplied by 0.31
+TRP03117,fuel_drop,fuel_L multiplied by 0.39
+TRP03161,fuel_spike,fuel_L multiplied by 2.30
+TRP03195,duplicate_trip,duplicate of TRP02221
+TRP03215,fuel_drop,fuel_L multiplied by 0.30
+TRP03262,fuel_drop,fuel_L multiplied by 0.37
+TRP03280,fuel_drop,fuel_L multiplied by 0.45
+TRP03305,fuel_spike,fuel_L multiplied by 2.30
+TRP03337,fuel_spike,fuel_L multiplied by 2.17
+TRP03340,fuel_spike,fuel_L multiplied by 2.28
+TRP03364,fuel_spike,fuel_L multiplied by 2.05
+TRP03370,duplicate_trip,duplicate of TRP00489
+TRP03374,fuel_spike,fuel_L multiplied by 2.28
+TRP03426,fuel_spike,fuel_L multiplied by 1.92
+TRP03456,duplicate_trip,duplicate of TRP00464
+TRP03485,distance_outlier,distance_km multiplied by 3.97
+TRP03488,fuel_drop,fuel_L multiplied by 0.32
+TRP03563,fuel_spike,fuel_L multiplied by 2.20
+TRP03566,fuel_spike,fuel_L multiplied by 2.04
+TRP03607,distance_outlier,distance_km multiplied by 2.89
+TRP03631,duplicate_trip,duplicate of TRP00235
+TRP03686,fuel_drop,fuel_L multiplied by 0.54
+TRP03697,distance_outlier,distance_km multiplied by 3.19
+TRP03734,fuel_spike,fuel_L multiplied by 2.33
+TRP03746,fuel_spike,fuel_L multiplied by 2.38
+TRP03774,duplicate_trip,duplicate of TRP03955
+TRP03799,distance_outlier,distance_km multiplied by 3.60
+TRP03823,fuel_spike,fuel_L multiplied by 2.05
+TRP03836,distance_outlier,distance_km multiplied by 2.59
+TRP03863,fuel_spike,fuel_L multiplied by 2.05
+TRP03920,distance_outlier,distance_km multiplied by 2.68
+TRP03932,fuel_spike,fuel_L multiplied by 2.38
+TRP03963,duplicate_trip,duplicate of TRP02944
+TRP03997,fuel_spike,fuel_L multiplied by 2.28
+TRP04003,fuel_drop,fuel_L multiplied by 0.49
+TRP04062,fuel_drop,fuel_L multiplied by 0.51
+TRP04120,distance_outlier,distance_km multiplied by 3.23
+TRP04131,distance_outlier,distance_km multiplied by 3.59
+TRP04147,distance_outlier,distance_km multiplied by 2.94
+TRP04189,fuel_drop,fuel_L multiplied by 0.38
+TRP04216,fuel_spike,fuel_L multiplied by 2.18
+TRP04339,fuel_spike,fuel_L multiplied by 1.91
+TRP04342,fuel_spike,fuel_L multiplied by 2.04
+TRP04347,fuel_spike,fuel_L multiplied by 1.85
+TRP04367,fuel_spike,fuel_L multiplied by 2.05
+TRP04400,fuel_spike,fuel_L multiplied by 1.83
+TRP04424,fuel_spike,fuel_L multiplied by 2.21
+TRP04477,fuel_drop,fuel_L multiplied by 0.37
+TRP04485,fuel_drop,fuel_L multiplied by 0.52
+TRP04490,distance_outlier,distance_km multiplied by 3.79
+TRP04508,duplicate_trip,duplicate of TRP01961
+TRP04594,fuel_drop,fuel_L multiplied by 0.36
+TRP04621,distance_outlier,distance_km multiplied by 3.83
+TRP04627,fuel_spike,fuel_L multiplied by 2.25
+TRP04671,fuel_spike,fuel_L multiplied by 2.18
+TRP04754,fuel_drop,fuel_L multiplied by 0.40
+TRP04779,fuel_spike,fuel_L multiplied by 2.13
+TRP04797,duplicate_trip,duplicate of TRP03655
+TRP04842,distance_outlier,distance_km multiplied by 3.58
+TRP04864,fuel_drop,fuel_L multiplied by 0.32
+TRP04921,fuel_spike,fuel_L multiplied by 2.48
+TRP04952,fuel_spike,fuel_L multiplied by 2.30
